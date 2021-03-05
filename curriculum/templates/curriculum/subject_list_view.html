@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Subjects
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row justify-content-center text-center align-content-center align-items-center my-3">
+	<!-- <div class="col-md-2"></div> -->
+
+	<div class="col-sm-12 col-md-12  ml-5">
+	<h3 class="text-danger">{Study Your Subjects}</h3><hr>
+
+		<div class="row text-center justify-content-center align-content-center align-items-center my-4">
+		{% for subject in standards.subjects.all %}
+
+		<div class="card mb-4 mr-4" style="max-width: 600px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="{{subject.image.url}}" style="height: 240px; ; max-width: 250px;" alt="Not Found">
+				</div>
+				<div class="col-md-8 ">
+					<div class="card-body ml-4">
+						<h5 class="card-title">{{subject.name}}</h5><hr>
+						<p class="card-text text-justify">{{subject.description|truncatechars:50}}</p><hr>
+						<a href="{% url 'curriculum:lesson_list' standard=standards.slug slug=subject.slug %}" class="btn btn-success">Get Lessons</a>
+					</div>
+				</div>
+		  	</div>
+		</div>
+
+		{% endfor %}
+		</div>
+	</div>
+
+	<!-- <div class="col-md-1"></div> -->
+		
+</div>
+
+
+{% endblock %}

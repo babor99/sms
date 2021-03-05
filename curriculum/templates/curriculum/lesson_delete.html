@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+LessonDelete
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row justify-content-center my-5 py-5">
+	<div class="col-md-5 mt-2 mb-4" style="border: .5px solid gray">
+		<h4>Delete Lesson</h4>
+		<form method="POST" class="mb-2">
+			{% csrf_token %}
+			<h5 class="text-danger">Are you sure want to delete this lesson?</h5><br>
+			<a href="{% url 'curriculum:lesson_list' standard=lessons.Standard.slug slug=lessons.subject.slug %}" class="btn btn-danger">Cancel</a>
+			<input type="submit" name="" value="Delete" class="btn btn-success">
+		</form>
+	</div>
+</div>
+
+	 
+{% endblock %}

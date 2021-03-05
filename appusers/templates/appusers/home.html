@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    
+
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+<div class="home-container" style="min-height: 550px; width: 100%; opacity: 0.9;">
+	<div id="home-back">
+		<div class="row">
+			<div class="col-md-2"></div>
+
+			<div class="col-md-8 justify-content-center align-items-center text-center mt-5">
+				  <div class="content ">
+				  	<h1 class="text-danger">Start Learnig Online</h4>
+				    <h4 class="text-warning">Your online school</h3>
+				    <p class="text-gray-dark text-justify">The Big Bang theory is a cosmological model of the observable universe from the earliest known periods through its subsequent large-scale evolution. The model describes how the universe expanded from an initial state of extremely high density and high temperature,[4] and offers a comprehensive explanation for a broad range of observed phenomena, including the abundance of light elements, the cosmic microwave background (CMB) radiation, and large-scale structure.</p>
+
+				    <div class="row " style="margin-top:60px;">
+
+				    	<div class="col-md-4">
+				    		<a href="" class="btn btn-outline-danger" style="margin-top: 50px;">Send Feedback</a> 
+				    	</div>
+
+				    	<div class="col-md-4">
+				    		<div class="row justify-content-center">
+				    			<a href="{% url 'curriculum:standard_list' %}" class="btn btn-outline-danger">Start Now</a>
+				    		</div>
+				    		<div class="row justify-content-center" style="margin-top: 50px; margin-bottom: 30px;">
+				    			<a href="" class="btn btn-outline-danger">See Agenda</a>
+				    		</div>
+				    	</div>
+
+				    	<div class="col-md-4">
+				    		<a href="" class="btn btn-outline-danger" style="margin-top: 50px; ">Dive into Github</a>
+				    	</div>
+				    </div>
+
+				  </div>
+			</div>
+
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

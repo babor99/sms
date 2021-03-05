@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Register
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row justify-content-center">
+	<div class="col col-md-6 my-4" style="border: 1px solid gray;">
+		<h3 class="text-center text-primary">Register</h3>
+		<form class="form mb-2" method="POST" action="{% url 'register' %}">
+			{% csrf_token %}
+			{{user_form|crispy}}
+			{{profile_form|crispy}}
+			<button class="btn btn-primary" type="submit">Register</button>
+		</form>		
+	</div>
+</div>
+
+{% endblock %}
+
+<div class="row">
+	<div class="col my-4">
+		<h3>Register here..</h3>
+		<form class="form" method="POST" action="{% url 'register' %}">
+			{% csrf_token %}
+			{{user_form|crispy}}
+			{{profile_form|crispy}}
+			<button class="btn btn-primary" type="submit">Register</button>
+		</form>
+	</div>
+</div>

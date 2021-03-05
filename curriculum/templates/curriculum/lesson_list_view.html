@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Lessons
+{% endblock %}
+
+
+{% block content %}
+	<div class="row">
+		<div class="col mx-2">
+			<h3 class="text-danger text-center">{Get Your Lessons}</h3><hr>
+			<div class="row justify-content-center">
+				{% for lesson in subjects.lessons.all %}
+				<div class="col-sm-4 col-md-4 ml-4 mr-4 my-4">
+					<div class="card text-center" style="max-height:250px; width: 400px;">
+					  <div class="card-header">
+					   <h3>Subject: {{lesson.subject.name}}</h3>
+					  </div>
+					  <div class="card-body">
+					    <h5 class="card-title">Chapter-{{lesson.position}}: {{lesson.name}}</h5>
+					    <a href="{% url 'curriculum:lesson_detail' standard=lesson.Standard.slug subject=subjects.slug slug=lesson.slug  %}" class="btn btn-outline-danger">Get Lectures</a><br>
+					  </div>
+					  <div class="card-footer text-muted d-md-inline-flex">
+					    {{lesson.created_at}}<p class="text-info">[{{lesson.created_at|timesince}} ago]</p>
+					  </div>
+				  	</div>
+				</div>
+				{% endfor %}
+			</div>
+			{% if request.user.is_superuser %}
+			<div class="row mb-4 justify-content-around">
+				<a href="{% url 'curriculum:lesson_create' standard=subjects.standard.slug slug=subjects.slug %}" class="btn btn-outline-info">Create Lesson</a>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
+
+		<a href="{% url 'curriculum:lesson_create' standard=subjects.standard.slug slug=subjects.slug %}" class="btn btn-outline-info">Create Lesson</a>

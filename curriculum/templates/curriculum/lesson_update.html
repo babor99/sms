@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+LessonUpdate 
+{% endblock %}
+
+
+{% block content %}
+	
+<div class="row justify-content-center my-5">
+	<div class="col-md-5 mt-2 mb-4" style="border: 1px solid gray">
+		<h4 class="text-center text-info">Update Lesson</h4>
+		<form method="POST" enctype="multipart/form-data" class="mb-2">
+			{% csrf_token %}
+			{{form|crispy}}
+			<a href="{% url 'curriculum:lesson_detail' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}" class="btn btn-warning">Cancel</a>
+			<input type="submit" name="" value="Update" class="btn btn-success">
+		</form>
+	</div>
+</div>
+
+{% endblock %}

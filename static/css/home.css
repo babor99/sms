@@ -1,0 +1,22 @@
+ .home-container {
+	position: relative;
+	margin: 0 auto; /* Center it */
+	min-height: 600px;
+}
+
+.home-container .content {
+  position: relative; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+  color: #f1f1f5; /* Grey text */
+  padding: 20px; /* Some padding */
+}
+
+#home-back{
+	background-image: url("/static/images/book0.png");
+	min-height: 600px;
+	width: 100%;
+
+
+}
